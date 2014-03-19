@@ -1,0 +1,37 @@
+<h1>Listing employers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Email</th>
+      <th>Location</th>
+      <th>Website</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employers.each do |employer| %>
+      <tr>
+        <td><%= employer.name %></td>
+        <td><%= employer.username %></td>
+        <td><%= employer.password %></td>
+        <td><%= employer.email %></td>
+        <td><%= employer.location %></td>
+        <td><%= employer.website %></td>
+        <td><%= link_to 'Show', employer %></td>
+        <td><%= link_to 'Edit', edit_employer_path(employer) %></td>
+        <td><%= link_to 'Destroy', employer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Employer', new_employer_path %>

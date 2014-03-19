@@ -1,0 +1,35 @@
+<h1>Listing cvs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Work experience</th>
+      <th>Education</th>
+      <th>Personal skills</th>
+      <th>Additional information</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cvs.each do |cv| %>
+      <tr>
+        <td><%= cv.work_experience %></td>
+        <td><%= cv.education %></td>
+        <td><%= cv.personal_skills %></td>
+        <td><%= cv.additional_information %></td>
+        <td><%= cv.user %></td>
+        <td><%= link_to 'Show', cv %></td>
+        <td><%= link_to 'Edit', edit_cv_path(cv) %></td>
+        <td><%= link_to 'Destroy', cv, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cv', new_cv_path %>

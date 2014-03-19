@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Work experience:</strong>
+  <%= @cv.work_experience %>
+</p>
+
+<p>
+  <strong>Education:</strong>
+  <%= @cv.education %>
+</p>
+
+<p>
+  <strong>Personal skills:</strong>
+  <%= @cv.personal_skills %>
+</p>
+
+<p>
+  <strong>Additional information:</strong>
+  <%= @cv.additional_information %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @cv.user %>
+</p>
+
+<%= link_to 'Edit', edit_cv_path(@cv) %> |
+<%= link_to 'Back', cvs_path %>
