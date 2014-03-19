@@ -1,4 +1,5 @@
 BerzaPoslova::Application.routes.draw do
+  get "home/index"
   resources :notifications
 
   resources :advartisments
@@ -18,7 +19,7 @@ BerzaPoslova::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  root :to => "home#index"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -67,4 +68,13 @@ BerzaPoslova::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  get "sign_in" => "authentication#sign_in"
+  get "signed_out" => "authentication#signed_out"
+  get "change_password" => "authentication#change_password"
+  get "forgot_password" => "authentication#forgot_password"
+  get "new_user" => "authentication#new_user"
+  get "password_sent" => "authentication#password_sent"
+
+  post "sign_in" => "authentication#login"
 end
